@@ -1,29 +1,39 @@
-# Programma Scritto in Assembly 
+# 📌 Programma Assembly per macOS (x86-64)
 
-# Solo per MacOS (x86-64)
+Questo programma, scritto in Assembly, utilizza le syscall specifiche per macOS su architettura x86-64.
 
-0x2000004 è il numero della syscall per l'operazione di scrittura (write) nel sistema operativo macOS (x86-64).
+## 🖥️ Requisiti
+- macOS con architettura **x86-64**
+- Un assembler compatibile, come **nasm**
+- Un linker, come **ld**
 
-# Makefile
-Ho create un makefile per facilitare lo script di Avvio, Build & Clean ; 
+## 🔹 Syscalls in macOS vs Linux
+Le syscall nei sistemi macOS e Linux sono numerate in modo diverso. Per esempio, la syscall `write` ha il numero **1** su Linux, mentre su macOS è **0x2000004**. Questo avviene perché macOS utilizza il formato **Mach-O**, che richiede un prefisso specifico per le syscall.
 
-per avviare il programma solo su macOs eseguire il seguente comando dal terminale 
-`bash`
-make run 
-``
+| Syscall       | macOS (x86-64) | Linux (x86-64) |
+|--------------|--------------|---------------|
+| `write` (scrive su stdout/file) | `0x2000004` | `1` |
+| `read` (legge da stdin/file) | `0x2000003` | `0` |
+| `exit` (termina il programma) | `0x2000001` | `60` |
 
-# 🔹 Syscalls in macOS
-Nei sistemi Linux, le syscall sono numerate in modo diverso rispetto a macOS. Per esempio, su Linux la syscall write ha il numero 1, mentre su macOS ha 0x2000004. Questo perché:
+## 📂 Makefile
+Per semplificare la gestione del programma, è stato creato un **Makefile** con i seguenti comandi:
 
-macOS usa il formato Mach-O per le eseguibili, e le syscall devono essere chiamate con un prefisso specifico.
-Le syscall su macOS a 64-bit hanno il prefisso 0x2000000 seguito dal numero della syscall reale.
+- **Compilazione e avvio**:
+  ```bash
+  make run
+  ```
+- **Pulizia dei file generati**:
+  ```bash
+  make clean
+  ```
 
--------------------------------------------------------------------------------------
-| Syscall	                               | macOS (x86-64)	        | Linux (x86-64) |
-|------------------------------------------------------------------------------------|
-| write (scrive su un file o stdout)	   |  0x2000004	            |     1          |
-|------------------------------------------------------------------------------------|
-| read (legge da un file o stdin)	       |  0x2000003	            |     0          |
-|------------------------------------------------------------------------------------|
-| exit (termina il programma)	           |  0x2000001	            |     60         |
---------------------------------------------------------------------------------------
+⚠ **Nota**: Questo programma è compatibile **solo** con macOS **x86-64**.
+
+## 🚀 Esecuzione
+Dopo aver eseguito `make run`, il programma verrà assemblato e avviato automaticamente.
+
+---
+📝 **Autore:** Manuel Crispino 
+📅 **Ultimo aggiornamento:** 23/02/2025
+
