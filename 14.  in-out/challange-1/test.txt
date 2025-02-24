@@ -1,0 +1,3 @@
+hello this is a file text generated to test a bit of c inputs and outputs i am having 
+a lot of fun doing this and i think is very interesting how 
+C can do so much i didn't expected before starting learning C is a great language really !! . 
