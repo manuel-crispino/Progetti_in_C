@@ -1,0 +1,10 @@
+hello   
+this 
+is 
+just 
+some 
+text 
+to 
+capitalize 
+in 
+clang
