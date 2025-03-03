@@ -1,4 +1,4 @@
-hello   
+hello   , world , you .know  . C . can .take . all .the .spaces .out. ? 
 this 
 is 
 just 

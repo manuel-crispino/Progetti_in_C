@@ -1,0 +1,20 @@
+# Ignora tutte le cartelle build ovunque nel progetto
+**/build/
+
+# Ignora file di compilazione comuni
+*.o
+*.out
+*.exe
+*.a
+*.so
+*.dll
+*.dSYM/
+
+# Ignora file generati da CMake
+CMakeCache.txt
+CMakeFiles/
+
+# Ignora file dell'IDE 
+.vscode/
+.idea/
+*.swp
