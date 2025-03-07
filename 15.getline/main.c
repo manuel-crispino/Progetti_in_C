@@ -22,7 +22,7 @@ if(buffer == NULL){
     exit(1);
 };
     printf("Type something\n");
-    characters =  getline(&buffer,&bufsize,stdin); 
+    characters =  getline(&buffer,&bufsize,stdin); // assegniamo character
 // getline() rialloca la memoria in automatico evitando bufoverflow ma puo creare problemi memoria . 
     if(characters >= 32){
         printf("too many characters error: overflow\n");

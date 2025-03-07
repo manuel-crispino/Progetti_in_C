@@ -1,0 +1,4 @@
+hello 
+this is some string so 
+i can read from c 
+and check if there is this word !
