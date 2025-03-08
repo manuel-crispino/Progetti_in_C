@@ -9,6 +9,7 @@ int main() {
     char *filename = NULL;
     FILE *file; 
     char line[256];
+    int lineCount= 1; 
 
     // Allocazione della memoria per la parola e il nome del file
     word = (char *)malloc(bufsize * sizeof(char));
@@ -42,11 +43,13 @@ int main() {
         while (token != NULL) {
             // Confrontare ogni parola con la parola da cercare
             if (strstr(token, word)) {
-                printf("Found the word '%s' in: %s\n", word, line);
+                printf("Found the word '%s' in line : %d\n", word, lineCount);
                 break;  // Esci se la parola è trovata
             }
             token = strtok(NULL, " \t\n");  // Continua con la prossima parola
+            
         }
+        lineCount += 1;
     }
 
     // Chiudere il file e liberare la memoria
