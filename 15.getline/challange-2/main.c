@@ -37,6 +37,7 @@ while(fscanf(file,"%79s",buffer) == 1){
     };
 }
 };
+fclose(file);
 return 0;
 
 }
