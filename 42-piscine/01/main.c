@@ -16,7 +16,7 @@ int ft_putc(char c){
    return write(1,&c,1);
 };
 
-void ft_print_comb2(){
+void ft_print_comb2(void){
    int i = 0; 
 
     while(i <= 99){
