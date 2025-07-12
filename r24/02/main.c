@@ -13,10 +13,19 @@ char i = 'a' ;
 while(i <= 'z'){
 ft_putc(i);
 i++;
+if(i == 'z'){
+ft_putc(i);
+i++; 
+ft_putc('\n');
+};
 }
+for(i='z';i >= 'a';i--){
+ft_putc(i);
+};
 };
 
 int main(){
 ft_alphabet();
+ft_putc('\n');
 return 0;
 };
