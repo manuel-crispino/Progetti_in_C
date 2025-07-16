@@ -21,5 +21,5 @@ Dopo aver eseguito `make run`, il programma verrà assemblato e avviato automati
 
 ---
 📝 **Autore:** Manuel Crispino 
-📅 **Ultimo aggiornamento:** 24/02/2025
+📅 **Ultimo aggiornamento:** 16/07/2025
 
