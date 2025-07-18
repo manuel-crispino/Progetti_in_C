@@ -1,7 +1,7 @@
 #include <unistd.h>
 
 void print(int c){
-if (c == -1){
+if ( c == -1){
 char nc='\n';
 write(1,&nc,1);
 }
@@ -16,42 +16,36 @@ void rush(int x , int y){
 	int pipe = 124;// asci  for |
 	int i = 0;
 	int j = 0; 
+	int endX = x-1;
 	int end = 1;
-	int call= 0;
 	int line_end = -1;
-	while(end == 0)
+	while (i <= y)
 	{
-		if (call == 1)
-		{	print(line_end);
-			call = 0; //call \n
-			i = 0;	//x_asse
-			j++;	//y_asse
-			if(i==x && j ==y){
-			end = 0;
-			}
-		}
-		while(call == 1)
-		{
-			if(i == 0 || i == x && j == 0  )
-			{
-				print(o);
-			}
-			if(i == x+1){call = 1;}
-			if(j == 0 || j == y)
+		while( j <= x)
+		{	
+			if( j <= endX && i < 0 && i > y)
 			{
 				print(minus);
 			}
-			else if(j > 0 && j != y && i == x)
-			{
-				print(pipe);
+			if(i > 0 && i < y){
+				if(j ==  0 || j == endX)
+				{
+					print(pipe);
+				}
+				if( i > 0 && i < y && j > 0 && j < endX)
+				{
+				print(12);
+				};
 			}
-			else
+			if(j == x)
 			{
-			 print(12);//asci not visibile	
-			};
-		i++;
+			  	print(line_end);
+			}
+		j++;
 		}
-	} 
+		i++;
+		j=0;
+	}
 }
 
 int main(){
