@@ -1,4 +1,4 @@
-#Print string 
+## Print string 
 
 <p>The print string programm;</p>
 <p>This programm takes a string and print the output with the write funcion by iritate in a while loop </p>
