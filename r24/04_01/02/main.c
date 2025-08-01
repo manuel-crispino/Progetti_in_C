@@ -1,25 +1,30 @@
 
 #include <unistd.h>
-
-typedef MAX_INT 2147483647;
-typedef MIN_INT -2147483648;
+#include <limits.h>
 
 void ft_putnbr(int nb)
-{
-	char c ;
-
-	n = 10;	
-	c = '0';
-	while(nb == 0)
+{	
+	char c = '0';
+	
+	if (nb == -2147483648)
 	{
-		nb = nb / 10;	
-		c = nb + '0';
-		write(1, &c, 1);
+		write(1, "-2147483648",11);
 	}
+	if (nb < 0)
+	{
+		nb = -nb;
+		write(1, "-", 1);	
+        } 
+	if ( nb >= 10)
+		ft_putnbr(nb / 10);
+	c = (nb % 10) + '0';
+	write(1, &c, 1);
 }
 
 int main(void)
 {	
-	ft_putnbr(42);
-	return (0);
+	ft_putnbr(-2147483648);
+	write(1," ",1);
+	ft_putnbr(-247483648);
+	return 0; 
 }
