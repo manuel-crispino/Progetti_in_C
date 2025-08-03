@@ -66,7 +66,7 @@ int last_check(char *base)
 	char *bin;
 	
 	dec = "0123456789";
-	oct = "012345678";
+	oct = "01234567";
 	bin = "01";	
 	if (ft_strcmp(base, bin))
 		return (1);				
