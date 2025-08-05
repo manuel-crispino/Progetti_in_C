@@ -28,20 +28,25 @@ void sort(int argc, char **argv)
 	int 	j;
 	char 	*tmp;	
 
-	j = argc -1;
+	j = 0;
 	i = 1;
-	tmp = argv[1];
-	while (i <= j)	
+	while( i < argc)
 	{
-		if (ft_strcmp(argv[i],argv[j]) > 0)
+		j = i + 1;
+		while (j <= argc)	
 		{
-			tmp = argv[i];
-			argv[i] = argv[j];
-			argv[j] = tmp;
+			if (ft_strcmp(argv[i],argv[j]) > 0)
+			{
+				tmp = argv[i];
+				argv[i] = argv[j];
+				argv[j] = tmp;
+			}
+			j++;
 		}
-		j--;
+		i++;
 	}
-	while(i <= argc - 1)
+	i = 1;
+	while(i <= argc)
 	{
 		print(argv[i]);
 		write(1, "\n", 1);
@@ -51,6 +56,9 @@ void sort(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
-		sort(argc,argv);
+	int i;
+	
+	i = argc - 1;
+		sort(i,argv);
 	return (0);
 }
