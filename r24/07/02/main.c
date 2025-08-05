@@ -17,7 +17,7 @@ int ft_ultimate_range(int **range, int min, int max)
 	cpy = (int *)malloc(sizeof(int) * size);
 	if (!cpy)
 		return (-1); 
-	while( i < size)
+	while (i < size)
 		cpy[i++] = min++;
 	*range = cpy;
 	return (size);
