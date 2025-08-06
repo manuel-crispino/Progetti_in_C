@@ -1,31 +1,36 @@
-/*this is a small program created to pratice more the vim build in editor from the terminal */ 
+#include <stdlib.h>
+#include <stdio.h>
 
-
-#include <unistd.h>
-
-char ft_putc(char c){
-return write(1,&c,1);
-};
-
-void ft_alphabet(void){
-char i = 'a' ; 
-
-while(i <= 'z'){
-ft_putc(i);
-i++;
-if(i == 'z'){
-ft_putc(i);
-i++; 
-ft_putc('\n');
-};
+int ft_ultimate_range(int **range, int min, int max)
+{
+	int size;
+	int i; 
+	int *cpy;
+	
+	i = 0;
+	size = max - min;
+	if (min >= max)
+	{
+		*range = NULL;
+		return (0);
+	}
+	cpy = (int *)malloc(sizeof(int) * size);
+	if (!cpy)
+		return (-1); 
+	while (i < size)
+		cpy[i++] = min++;
+	*range = cpy;
+	return (size);
 }
-for(i='z';i >= 'a';i--){
-ft_putc(i);
-};
-};
 
-int main(){
-ft_alphabet();
-ft_putc('\n');
-return 0;
-};
+int main()
+{
+	int *tab;
+	int size = ft_ultimate_range(&tab, 0, 1);
+	int i = 0;
+	printf("tot = %d\n", size);
+	while(i < size)
+		printf("%d\n", tab[i++]);
+	free(tab);
+	return (0);		
+}
